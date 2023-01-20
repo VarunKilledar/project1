@@ -11,22 +11,22 @@ jobs:
     steps: 
       - uses: action/chevkout@v2
         name: Cache modules
-      - uses: actions/cache@v1
-        id: yarn-cache
-        with:
-          path: node_modules
-          key:${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-            restore-keys: ${{ runner.os }}-yarn-
+      # - uses: actions/cache@v1
+      #   id: yarn-cache
+      #   with:
+      #     path: node_modules
+      #     key:${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      #       restore-keys: ${{ runner.os }}-yarn-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
-        with:
-         args: --acl public-read --follw-symlinks --delete
+        # with:
+        #  args: --acl public-read --follw-symlinks --delete
         evn: 
           AWS_BUCKET: ${{secrets.BUCKET}}
           AWS_ACCESS_KEY_ID: ${{secrets.ACCESS}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.SECRETS}}
           AWS-REGION: us-east-2
-        run: aws s3 cp.project1 s3://testbucketfromgituser
+        - run: aws s3 cp . s3://testbucketfromgituser --recursive
           
 ...
 
