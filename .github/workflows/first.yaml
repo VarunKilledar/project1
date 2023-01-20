@@ -22,11 +22,11 @@ jobs:
         # with:
         #  args: --acl public-read --follw-symlinks --delete
         evn: 
-          AWS_BUCKET: ${{secrets.BUCKET}}
+          # AWS_BUCKET: ${{secrets.BUCKET}}
           AWS_ACCESS_KEY_ID: ${{secrets.ACCESS}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.SECRETS}}
           AWS-REGION: us-east-2
-        - run: aws s3 cp . s3://testbucketfromgituser --recursive
+      - run: aws s3 cp . s3://testbucketfromgituser --recursive
           
 ...
 
