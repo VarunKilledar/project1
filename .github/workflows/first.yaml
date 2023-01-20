@@ -7,7 +7,7 @@ on:
 
 jobs: 
   push: 
-    runs-on: ubantu-latest
+    runs-on: ubuntu-latest
     steps: 
       - uses: action/chevkout@v2
         name: Cache modules
