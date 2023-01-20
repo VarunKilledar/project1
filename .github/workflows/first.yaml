@@ -21,7 +21,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         # with:
         #  args: --acl public-read --follw-symlinks --delete
-        evn: 
+        environment: 
           # AWS_BUCKET: ${{secrets.BUCKET}}
           AWS_ACCESS_KEY_ID: ${{secrets.ACCESS}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.SECRETS}}
