@@ -23,8 +23,8 @@ jobs:
         #  args: --acl public-read --follw-symlinks --delete
         with:
           # AWS_BUCKET: ${{secrets.BUCKET}}
-          aws-access-key-id: ${{secrets.ACCESS}}
-          aws-secret-access-key: ${{secrets.SECRETS}}
+          aws-access-key-id: ${{ secrets.ACCESS }}
+          aws-secret-access-key: ${{ secrets.SECRETS }}
           aws-region: us-east-2
       - run: aws s3 cp . s3://testbucketfromgituser --recursive
           
